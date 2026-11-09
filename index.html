@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Theater</title>
+    <link rel="stylesheet" href="Css/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header"> 
+        <h1 class="header__title">Movies Theater</h1>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="headerbtn" href="#">Home</a></li>
+                <li class="nav__item"><a class="headerbtn" href="#">Movies</a></li>
+                <li class="nav__item"><a class="headerbtn" href="#">About</a></li>
+                <li class="nav__item"><a class="headerbtn" href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+     <main>
+    <!-- Sección 1: En Cartelera -->
+    <section class="movies">
+        <h2 class="movies__title">Películas en Cartelera</h2>
+        <div id="movies-container" class="movies-container"></div>
+    </section>
+
+    <!-- Sección 2: Mejor Valoradas (Abajo) -->
+    <section class="movies">
+        <h2 class="movies__title">Mejor Valoradas del Año</h2>
+        <div id="top-movies-container" class="movies-container"></div>
+    </section>
+</main>
+
+    <!-- Reserve Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal__content">
+            <button id="btn-close-modal" class="modal__close">&times;</button>
+            
+            <h2 id="modal-movie-title" class="modal__title">Reservar Boletos</h2>
+            
+            <div class="modal__options">
+                <label for="showtime-date">Fecha:</label>
+                <input type="date" id="showtime-date" class="modal__input">
+                
+                <label for="showtime-time">Hora:</label>
+                <select id="showtime-time" class="modal__input">
+                    <option value="15:00">3:00 PM</option>
+                    <option value="18:00">6:00 PM</option>
+                    <option value="21:00">9:00 PM</option>
+                </select>
+            </div>
+
+            <div class="screen-container">
+                <div class="screen">PANTALLA</div>
+            </div>
+
+            <div id="seats-container" class="seats-container"></div>
+
+            <ul class="showcase">
+                <li><div class="seat"></div> <small>Disponible</small></li>
+                <li><div class="seat seat--selected"></div> <small>Seleccionado</small></li>
+                <li><div class="seat seat--occupied"></div> <small>Ocupado</small></li>
+            </ul>
+
+            <div class="modal__summary">
+                <p>Asientos seleccionados: <span id="selected-count">0</span></p>
+                <p>Total a pagar: <strong>$<span id="total-price">0</span></strong></p>
+                <button id="btn-confirm-booking" class="modal__btn-confirm">Confirmar Reserva</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" >
+        <p class="footer-text" >&copy; 2026 Movies Theater - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="Js/main.js"></script>
+</body>
+</html>

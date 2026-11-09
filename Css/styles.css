@@ -1,0 +1,264 @@
+:root{
+    --header-color: #166866;
+    --background-color: #2C3E50;
+
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    }
+    
+
+
+main{
+    flex: 1;
+}
+/* Header Styles */
+
+.header__title {
+    margin: 0 0 15px 0;
+    font-size: 2rem;
+}
+.header {
+    background-color: var(--header-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.nav ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 15px 0 0 0;
+    
+    align-items: justify-content;
+}
+
+
+
+/* Button Styles */
+button {
+    background-color: var(--header-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.headerbtn{
+    text-decoration: none;
+    color: inherit;
+}
+
+.movies__title{
+    color: white;
+    text-align: center;
+}
+/* Movies Container */
+
+.movies-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.movie-card {
+    flex: 0 0 220px; /* Ancho fijo de cada tarjeta */
+    background-color: #1a252f;
+    border-radius: 8px;
+    padding: 15px 10px;
+    color: white;
+    
+    /* 1. Usar Flexbox vertical para centrar el contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la imagen, el título y el botón horizontalmente */
+    justify-content: space-between;
+    text-align: center;
+}
+
+.movie-card__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.movie-card__title {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.movie-card__btn {
+    width: 90%; /* Hace que el botón mantenga la misma simetría visual que la imagen */
+    border-radius: 4px;
+}
+
+
+.movies-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; /* Permite scroll horizontal */
+    padding: 20px;
+}
+
+.movie-card {
+    flex: 0 0 200px; /* Evita que las tarjetas se encojan */
+}
+.movies-container img{
+    width: 150px;
+}
+
+/*  Modal/*
+/* --- Ventana Modal --- */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75); /* Fondo oscuro traslúcido */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estado activo para mostrar el modal */
+.modal.active {
+    display: flex;
+}
+
+.modal__content {
+    background-color: var(--background-color);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    font-size: 2rem;
+    padding: 0;
+    color: white;
+}
+
+.modal__options {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+    align-items: center;
+}
+
+.modal__input {
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+}
+
+/* --- Sala y Asientos --- */
+.screen-container {
+    perspective: 400px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.screen {
+    background-color: #fff;
+    height: 15px;
+    width: 100%;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+    transform: rotateX(-30deg);
+    font-size: 0.7rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Grilla de Asientos: 8 columnas */
+.seats-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+    justify-items: center;
+    margin: 20px 0;
+}
+
+.seat {
+    background-color: #444451;
+    height: 22px;
+    width: 26px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.seat:hover:not(.seat--occupied) {
+    transform: scale(1.2);
+}
+
+.seat--selected {
+    background-color: #6feaf6;
+}
+
+.seat--occupied {
+    background-color: #e50914;
+    cursor: not-allowed;
+}
+
+/* Leyenda */
+.showcase {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    background: rgba(0,0,0,0.2);
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.showcase li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.modal__summary {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.modal__btn-confirm {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #27ae60;
+    font-weight: bold;
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--header-color);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
